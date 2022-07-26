@@ -6,13 +6,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-main{
-    background-image: linear-gradient(rgba(0, 0, 255, 0.50), rgba(0, 0, 255, 0.25)), url(https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg);
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 header{
     background: #191B1D;
     text-align: center;
@@ -34,7 +28,7 @@ header{
     position: absolute;
     width: 100%;
     background: #191B1D;
-    text-align: left;
+    text-align: center;
     top: 100%;
     transform: scale(1,0);
     transition: transform 400ms ease-in-out;
@@ -48,7 +42,6 @@ header{
 }
 .navbar ul li{
     margin-bottom: 1em;
-    margin-left: 3em;
 }
 .navbar ul li a{
     text-decoration: none;
@@ -154,4 +147,13 @@ header{
     .navbar a:hover::after{
         transform: scale(1,1);
     }
+}
+
+/* Main Content */
+main{
+    background-image: linear-gradient(rgba(0, 0, 255, 0.50), rgba(0, 0, 255, 0.25)), url(https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
