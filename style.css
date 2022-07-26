@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
+
 main{
     background-image: linear-gradient(rgba(0, 0, 255, 0.50), rgba(0, 0, 255, 0.25)), url(https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg);
     height: 100vh;
@@ -17,6 +18,17 @@ header{
     text-align: center;
     position: fixed;
     width: 100%;
+
+
+}
+
+.logo{
+    color: blue;
+}
+.logo span{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
 }
 .navbar {
     position: absolute;
@@ -92,15 +104,54 @@ header{
 .navbar-toggle-label span::after{
     top: 7px;
 }
+/* Media Queries for navbar */
+@media (min-width:800px){
+    .navbar-toggle-label{
+        display: none;
+    }
+    header{
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+    .logo{
+        grid-column: 2 /span 1;
+        display: flex;
+        align-items: center;
+    }
+    .navbar{
+       all: unset;
+       grid-column: 3/4;
+       display: flex;
+       justify-content: flex-end;
+       align-items: center;
+       
+    }
+    .navbar ul{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navbar ul li{
+        margin-left: 3em;
+    }
+    .navbar ul li a{
+        opacity: 1;
+       position: relative;
+    }
 
-
-
-
-.logo{
-    color: blue;
-}
-.logo span{
-    font-size: 14px;
-    text-transform: uppercase;
-    color: white;
+    .navbar a::after{
+        content: '';
+        display: block;
+        height: 3px;
+        background-color: blue;
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-radius: 3px;
+        transform: scale(0,1);
+        transform-origin: left;
+        transition: transform ease-in-out 250ms;
+    }
+    .navbar a:hover::after{
+        transform: scale(1,1);
+    }
 }
