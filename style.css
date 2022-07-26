@@ -5,7 +5,102 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
 }
+main{
+    background-image: linear-gradient(rgba(0, 0, 255, 0.50), rgba(0, 0, 255, 0.25)), url(https://cdn.freecodecamp.org/curriculum/css-photo-gallery/7.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+    background: #191B1D;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+}
+.navbar {
+    position: absolute;
+    width: 100%;
+    background: #191B1D;
+    text-align: left;
+    top: 100%;
+    transform: scale(1,0);
+    transition: transform 400ms ease-in-out;
+    transform-origin: top;
+}
+.navbar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 1em;
+}
+.navbar ul li{
+    margin-bottom: 1em;
+    margin-left: 3em;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: blue;
+    opacity: 0;
+}
+.navbar ul li a:hover{
+    color: white;
+}
+/* making nav toggle with only css */
+/* credits to Kevin Powell */
+.navbar-toggle:checked ~ .navbar{
+    transform: scale(1,1);
+}
+.navbar-toggle:checked ~ .navbar a{
+   opacity: 1;
+   transition: opacity  250ms ease-in-out 250ms;
+}
+.navbar-toggle{
+    display: none;
+}
+.navbar-toggle-label{
+    color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 3em;
+    left: 0;
+    top: 0;
+    margin-bottom: 1em;
+}
+/* creating hamburger */
+.navbar-toggle-label span,
+.navbar-toggle-label span::before,
+.navbar-toggle-label span::after{
+    display: block;
+    height: 2px;
+    width: 2rem;
+    background: blue;
+    position: relative;
+   
+}
 
-nav{
-   display: flex; 
+.navbar-toggle-label span::before,
+.navbar-toggle-label span::after{
+    content: '';
+    position: absolute;
+}
+.navbar-toggle-label span::before{
+    bottom: 7px;
+}
+.navbar-toggle-label span::after{
+    top: 7px;
+}
+
+
+
+
+.logo{
+    color: blue;
+}
+.logo span{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
 }
